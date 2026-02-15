@@ -3,43 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kredi Hesaplama</title>
+    <title>Banka Kredi Hesaplama</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Kredi Hesaplama Aracı</h1>
+        <header>
+            <h1>Kredi Hesaplama Aracı</h1>
+            <p>Hayalinizdeki ihtiyaçlarınız için kredi hesaplaması yapın.</p>
+        </header>
         <form id="loan-form">
             <div class="form-group">
-                <label for="principal">Kredi Tutarı</label>
-                <input type="number" id="principal" required>
+                <label for="principal">Kredi Tutarı (₺)</label>
+                <input type="number" id="principal" placeholder="Örn: 50000" required>
             </div>
             <div class="form-group">
                 <label for="annualRate">Yıllık Faiz Oranı (%)</label>
-                <input type="number" id="annualRate" step="0.01" required>
+                <input type="number" id="annualRate" step="0.01" placeholder="Örn: 1.79" required>
             </div>
             <div class="form-group">
                 <label for="months">Vade (Ay)</label>
-                <input type="number" id="months" required>
+                <input type="number" id="months" placeholder="Örn: 36" required>
             </div>
             <button type="submit">Hesapla</button>
         </form>
         <div id="results" class="hidden">
-            <h2>Sonuçlar</h2>
             <div id="summary"></div>
-            <table id="amortization-table">
-                <thead>
-                    <tr>
-                        <th>Ay</th>
-                        <th>Taksit</th>
-                        <th>Anapara</th>
-                        <th>Faiz</th>
-                        <th>Kalan Bakiye</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table id="amortization-table">
+                    <thead>
+                        <tr>
+                            <th>Ay</th>
+                            <th>Aylık Taksit</th>
+                            <th>Anapara</th>
+                            <th>Faiz</th>
+                            <th>Kalan Bakiye</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
