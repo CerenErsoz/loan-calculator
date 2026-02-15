@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kredi Hesaplama</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kredi Hesaplama Aracı</h1>
+        <form id="loan-form">
+            <div class="form-group">
+                <label for="principal">Kredi Tutarı</label>
+                <input type="number" id="principal" required>
+            </div>
+            <div class="form-group">
+                <label for="annualRate">Yıllık Faiz Oranı (%)</label>
+                <input type="number" id="annualRate" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="months">Vade (Ay)</label>
+                <input type="number" id="months" required>
+            </div>
+            <button type="submit">Hesapla</button>
+        </form>
+        <div id="results" class="hidden">
+            <h2>Sonuçlar</h2>
+            <div id="summary"></div>
+            <table id="amortization-table">
+                <thead>
+                    <tr>
+                        <th>Ay</th>
+                        <th>Taksit</th>
+                        <th>Anapara</th>
+                        <th>Faiz</th>
+                        <th>Kalan Bakiye</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
